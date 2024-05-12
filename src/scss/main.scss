@@ -1,0 +1,47 @@
+@use 'abstracts' as *;
+@use 'layout';
+@use 'pages';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: 'Roboto', sans-serif;
+
+  #root {
+    display: grid;
+    grid-template-columns: auto 1.4fr;
+    grid-template-rows: 55px auto;
+    grid-template-areas:
+      'nav nav'
+      'aside main';
+
+    main {
+      width: 100%;
+      grid-area: main;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $bg-color;
+    box-shadow: inset 0 0 200px $bg-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(151, 151, 151);
+    border: 4.5px solid $bg-color;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
